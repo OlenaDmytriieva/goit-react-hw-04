@@ -1,0 +1,12 @@
+.gallery {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+  padding: 8px;
+}
+
+.galleryItem {
+  width: calc((100% - 24px) / 4);
+  overflow: hidden;
+  height: 200px;
+}

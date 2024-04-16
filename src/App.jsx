@@ -6,16 +6,17 @@ import { ImageGallery } from "./components/ImageGallery/ImageGallery";
 import { useState } from "react";
 
 export default function App() {
-  const [query, setSearchText] = useState("");
+  const [query, setQuery] = useState("");
 
-  const handleSearchSubmit = (text) => {
-    setSearchText(text);
+  const onFormSubmit = (query) => {
+    setQuery(query);
   };
+
   return (
     <Section>
       <Container>
         <div>
-          <SearchBar onSubmit={handleSearchSubmit} />
+          <SearchBar onSubmit={onFormSubmit} />
           <ImageGallery query={query} />
         </div>
       </Container>

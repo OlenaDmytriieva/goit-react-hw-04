@@ -1,7 +1,9 @@
+import style from "./ImageCard.module.css";
+
 export const ImageCard = ({ alt, urls }) => {
   return (
     <div>
-      <img src={urls.small} alt={alt} />
+      <img className={style.card} src={urls.small} alt={alt} />
     </div>
   );
 };

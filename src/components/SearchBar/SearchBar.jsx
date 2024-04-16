@@ -6,7 +6,14 @@ import toast, { Toaster } from "react-hot-toast";
 export const SearchBar = ({ onSubmit }) => {
   const [text, setText] = useState("");
 
-  const notify = () => toast("Enter your searching request, please");
+  const notify = () =>
+    toast.error("Enter your searching request, please", {
+      style: {
+        border: "1px solid red",
+        backgroundColor: "salmon",
+        color: "white",
+      },
+    });
 
   function changeText(e) {
     setText(e.target.value);
@@ -38,7 +45,6 @@ export const SearchBar = ({ onSubmit }) => {
           onChange={changeText}
           placeholder="Search images and photos"
           name="search"
-          required
           autoFocus
         />
       </form>

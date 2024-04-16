@@ -10,7 +10,7 @@ import axios from "axios";
 
 export const getPhotos = async (query, page) => {
   const { data } = await axios.get(
-    `https://api.unsplash.com/search/photos?query=${query}&page=${page}&per_page=12&client_id=TDPRPm7UqZ8pVTZVBZEOKeKNPMQO9BdGMj1FDyslSZI`
+    `https://api.unsplash.com/search/photos?query=${query}&page=${page}&per_page=12&orientation=landscape&client_id=TDPRPm7UqZ8pVTZVBZEOKeKNPMQO9BdGMj1FDyslSZI`
   );
 
   return data;
