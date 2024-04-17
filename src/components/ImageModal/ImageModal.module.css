@@ -1,0 +1,30 @@
+.modal {
+  width: 800px;
+  height: 400px;
+  display: block;
+  margin: auto;
+  padding: 20px;
+}
+
+.overlay {
+  background-color: rgb(109, 105, 114);
+}
+
+.imgInfo {
+  display: flex;
+  justify-content: space-between;
+  padding: 20px;
+}
+
+.imgModal {
+  width: 950px;
+  height: 550px;
+  box-sizing: border-box;
+  display: block;
+  margin: 0 auto;
+}
+
+.modalText {
+  color: #fff;
+  font-size: 20px;
+}
