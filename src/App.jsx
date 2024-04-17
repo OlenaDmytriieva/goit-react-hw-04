@@ -6,6 +6,7 @@ import { getPhotos } from "./apiServise/photos";
 import { ErrorMessage } from "./components/ErrorMessage/ErrorMessage";
 import { Loader } from "./components/Loader/Loader";
 import { LoadMoreBtn } from "./components/LoadMoreBtn/LoadMoreBtn";
+import { ImageModal } from "./components/ImageModal/ImageModal";
 
 import { useState, useEffect, useRef } from "react";
 
@@ -46,6 +47,12 @@ export default function App() {
     setPage(page + 1);
   };
 
+  const [selectedImage, setSelectedImage] = useState(null);
+
+  const closeModal = () => {
+    setSelectedImage(null);
+  };
+
   return (
     <Section>
       <Container>
@@ -53,10 +60,21 @@ export default function App() {
           <SearchBar onSubmit={onFormSubmit} />
 
           {isError && <ErrorMessage />}
-          <ImageGallery photos={photos} />
+          <ImageGallery photos={photos} setSelectedImage={setSelectedImage} />
           {loading && <Loader />}
           {photos.length > 0 && (
             <LoadMoreBtn onClick={onLoadMore} setPage={setPage} />
+          )}
+
+          {selectedImage && (
+            <ImageModal
+              isOpen={!!selectedImage}
+              closeModal={closeModal}
+              imageUrl={selectedImage.urls.regular}
+              alt="Regular photo"
+              author={selectedImage.user.name}
+              likes={selectedImage.likes}
+            />
           )}
         </div>
       </Container>
